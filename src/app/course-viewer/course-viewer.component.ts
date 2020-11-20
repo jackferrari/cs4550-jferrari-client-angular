@@ -9,8 +9,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class CourseViewerComponent implements OnInit {
 
-  courses = []
-  courseId = ''
+  courses = [];
+  courseId = '';
 
   constructor(private activateRoute: ActivatedRoute,
               private service: CourseService) { }
@@ -21,7 +21,7 @@ export class CourseViewerComponent implements OnInit {
       if (typeof params.courseId) {
         this.courseId = params.courseId;
       }
-    })
+    });
 
     this.service.fetchAllCourses()
       .then(courses => this.courses = courses);
