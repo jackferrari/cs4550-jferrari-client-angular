@@ -10,8 +10,9 @@ import {ModuleService} from '../services/module-service';
 import { CourseViewerComponent } from './course-viewer/course-viewer.component';
 import { ModuleListComponent } from './module-list/module-list.component';
 import { LessonTabsComponent } from './lesson-tabs/lesson-tabs.component';
-import { TopicPilssComponent } from './topic-pilss/topic-pilss.component';
+import { TopicPillsComponent } from './topic-pills/topic-pills.component';
 import { WidgetListComponent } from './widget-list/widget-list.component';
+import { CourseTableComponent } from './course-table/course-table.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,9 @@ import { WidgetListComponent } from './widget-list/widget-list.component';
     CourseViewerComponent,
     ModuleListComponent,
     LessonTabsComponent,
-    TopicPilssComponent,
-    WidgetListComponent
+    TopicPillsComponent,
+    WidgetListComponent,
+    CourseTableComponent
   ],
   imports: [
     BrowserModule,

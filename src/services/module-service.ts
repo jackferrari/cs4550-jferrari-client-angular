@@ -8,6 +8,15 @@ export class ModuleService {
   findModulesForCourse = (course) =>
     fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/courses/${course._id}/modules`)
       .then(response => response.json())
+  updateModule = (module) =>
+    fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/modules/${module._id}`, {
+      method: 'PUT',
+      body: JSON.stringify(module),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+      .then(response => response.json())
   createModuleForCourse = (course) =>
     fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/courses/${course._id}/modules`, {
       method: 'POST',
