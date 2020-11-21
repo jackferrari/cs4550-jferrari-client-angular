@@ -9,22 +9,9 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class CourseViewerComponent implements OnInit {
 
-  courses = [];
-  courseId = '';
-
-  constructor(private activateRoute: ActivatedRoute,
-              private service: CourseService) { }
+  constructor() { }
 
   ngOnInit(): void {
-
-    this.activateRoute.params.subscribe(params => {
-      if (typeof params.courseId) {
-        this.courseId = params.courseId;
-      }
-    });
-
-    this.service.fetchAllCourses()
-      .then(courses => this.courses = courses);
   }
 
 }
