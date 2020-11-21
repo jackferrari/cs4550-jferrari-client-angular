@@ -5,6 +5,9 @@ export class LessonService {
   findLessonsForModuleId = (moduleId) =>
     fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/modules/${moduleId}/lessons`)
       .then(response => response.json())
+  findLessonsById = (lessonId) =>
+    fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/lessons/${lessonId}`)
+      .then(response => response.json())
   findLessonsForModule = (module) =>
     fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/modules/${module._id}/lessons`)
       .then(response => response.json())

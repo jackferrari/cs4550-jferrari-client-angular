@@ -1,17 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopicPillsComponent } from './topic-pills.component';
 
-describe('TopicPilssComponent', () => {
+describe('TopicPillsComponent', () => {
   let component: TopicPillsComponent;
   let fixture: ComponentFixture<TopicPillsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       declarations: [ TopicPillsComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TopicPillsComponent);

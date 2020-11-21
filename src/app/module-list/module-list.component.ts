@@ -20,7 +20,7 @@ export class ModuleListComponent implements OnInit {
 
   createModule = () =>
     this.moduleService.createModuleForCourse(this.course)
-      .then(actualCourse => this.modules.push(actualCourse))
+      .then(actualModule => this.modules.push(actualModule))
 
   deleteModule = (module) =>
     this.moduleService.deleteModule(module)
@@ -36,7 +36,6 @@ export class ModuleListComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      console.log(params);
       if (typeof params.moduleId) {
         this.moduleId = params.moduleId;
       }

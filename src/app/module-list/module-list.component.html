@@ -1,11 +1,10 @@
 <ul class="list-group">
-  <li class="list-group-item active">Modules</li>
   <li [ngClass]="{'list-group-item-success': module._id === this.moduleId}"
     class="list-group-item" *ngFor="let module of modules">
     <span [hidden]="module.editing">
-    <a routerLink="/courses/{{this.course._id}}/modules/{{module._id}}/lessons">
-      {{module.title}}
-    </a>
+      <a routerLink="/courses/{{this.course._id}}/modules/{{module._id}}/lessons">
+        {{module.title}}
+      </a>
       <button (click)="editing(module)">
         Edit
       </button>

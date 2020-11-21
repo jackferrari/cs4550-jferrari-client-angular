@@ -5,6 +5,9 @@ export class ModuleService {
   findModulesForCourseId = (courseId) =>
     fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/courses/${courseId}/modules`)
       .then(response => response.json())
+  findModuleById = (moduleId) =>
+    fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/modules/${moduleId}`)
+      .then(response => response.json())
   findModulesForCourse = (course) =>
     fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/courses/${course._id}/modules`)
       .then(response => response.json())
