@@ -11,7 +11,6 @@ import {LessonService} from '../../services/lesson-service';
 })
 export class LessonTabsComponent implements OnInit {
 
-
   lessons = [];
   lessonId = '';
   courseId = '';

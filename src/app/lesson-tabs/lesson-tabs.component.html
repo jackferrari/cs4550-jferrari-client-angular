@@ -1,13 +1,13 @@
 <ul class="nav nav-tabs">
-  <li [ngClass]="{'list-group-item-success': lesson._id === this.lessonId}"
-      class="list-group-item" *ngFor="let lesson of lessons">
+  <li class="nav-item" *ngFor="let lesson of lessons">
     <span [hidden]="lesson.editing">
-      <a routerLink="/courses/{{this.courseId}}/modules/{{module._id}}/lessons/{{lesson._id}}/topics">
+      <a [ngClass]="{'active': lesson._id === this.lessonId}"
+         class="nav-link" routerLink="/courses/{{this.courseId}}/modules/{{module._id}}/lessons/{{lesson._id}}/topics">
         {{lesson.title}}
+        <button (click)="editing(lesson)">
+          Edit
+        </button>
       </a>
-      <button (click)="editing(lesson)">
-        Edit
-      </button>
     </span>
     <span [hidden]="!lesson.editing">
             <input [(ngModel)]="lesson.title"/>
@@ -19,7 +19,7 @@
             </button>
     </span>
   </li>
-  <li class="list-group-item">
+  <li class="nav-item">
     <button (click)="createLesson()">
       Create
     </button>

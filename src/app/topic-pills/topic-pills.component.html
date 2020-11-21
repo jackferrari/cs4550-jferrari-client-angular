@@ -1,1 +1,29 @@
-<p>topic-pills works!</p>
+<ul class="nav nav-pills">
+  <li class="nav-item" *ngFor="let topic of topics">
+    <span [hidden]="topic.editing">
+      <a [ngClass]="{'active': topic._id === this.topicId}"
+         class="nav-link" routerLink="/courses/{{this.courseId}}/modules/{{moduleId}}/lessons/{{lesson._id}}/topics/{{topic._id}}/widgets">
+        {{topic.title}}
+        <button (click)="editing(topic)">
+          Edit
+        </button>
+      </a>
+
+    </span>
+    <span [hidden]="!topic.editing">
+            <input [(ngModel)]="topic.title"/>
+            <button (click)="deleteTopic(topic)">
+            Delete
+            </button>
+            <button (click)="save(topic)">
+              Save
+            </button>
+    </span>
+  </li>
+  <li class="nav-item">
+    <button (click)="createTopic()">
+      Create
+    </button>
+  </li>
+</ul>
+
