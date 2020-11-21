@@ -12,7 +12,7 @@ export class CourseTableComponent implements OnInit {
   courses = [];
   courseId = '';
 
-  constructor(private activateRoute: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
               private service: CourseService,
               private courseService: CourseService) { }
 
@@ -34,7 +34,7 @@ export class CourseTableComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.activateRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe(params => {
       if (typeof params.courseId) {
         this.courseId = params.courseId;
       }

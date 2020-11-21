@@ -5,6 +5,9 @@ export class CourseService {
   fetchAllCourses = () =>
     fetch('https://wbdv-generic-server.herokuapp.com/api/jferrari/courses')
       .then(response => response.json())
+  getCourseById = (courseId) =>
+    fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/courses/${courseId}`)
+      .then(response => response.json())
   createCourse = () =>
     fetch('https://wbdv-generic-server.herokuapp.com/api/jferrari/courses', {
       method: 'POST',
