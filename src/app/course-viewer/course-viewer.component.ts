@@ -9,9 +9,16 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class CourseViewerComponent implements OnInit {
 
-  constructor() { }
+  courseId = '';
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      if (typeof params.courseId) {
+        this.courseId = params.courseId;
+      }
+    });
   }
 
 }
