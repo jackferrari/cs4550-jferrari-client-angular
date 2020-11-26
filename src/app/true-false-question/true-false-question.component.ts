@@ -8,15 +8,18 @@ import {faCheck, faTimes} from '@fortawesome/free-solid-svg-icons';
 })
 export class TrueFalseQuestionComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
   @Input()
   question = {_id: '', title: '', question: '', answer: '', correct: ''};
+  answer = '';
   grading = false;
   faCheck = faCheck;
   faTimes = faTimes;
+  checked = '';
 
   grade = () => {
+    console.log(this.question);
     this.grading = true;
   }
 

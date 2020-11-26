@@ -1,1 +1,29 @@
-<p>true-false-question works!</p>
+<h2>TF {{this.question.question}}</h2>
+<ul class="list-group">
+  <li [ngClass]="{
+  'list-group-item-success': grading && this.question.correct === 'true',
+  'list-group-item-danger': grading && this.question.correct !== 'true' && this.answer === 'true'
+  }"
+    class="list-group-item">
+    <label class="form-check-label" for="true">
+    <input class="form-check-input" type="radio" [(ngModel)]="this.answer" name="{{this.question._id}}" id="true" value="true">
+      true
+    </label>
+  </li>
+  <li [ngClass]="{
+  'list-group-item-success': grading && this.question.correct === 'false',
+  'list-group-item-danger': grading && this.question.correct !== 'false' && this.answer === 'false'
+  }"
+    class="list-group-item">
+    <label class="form-check-label" for="false">
+    <input class="form-check-input" type="radio" [(ngModel)]="this.answer" name="{{this.question._id}}" id="false" value="false">
+      false
+    </label>
+  </li>
+</ul>
+
+<p>Answer= {{this.answer}}</p>
+
+<button class="btn-success" (click)="grade()">
+  Grade
+</button>

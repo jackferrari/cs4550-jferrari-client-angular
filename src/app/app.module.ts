@@ -17,7 +17,6 @@ import {LessonService} from '../services/lesson-service';
 import {TopicService} from '../services/topic-service';
 import {QuizzesServiceClient} from '../services/quiz.service.client';
 import {QuestionsServiceClient} from '../services/question.service.client';
-import { QuizzesComponentComponent } from './quizzes-component/quizzes-component.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
@@ -33,7 +32,6 @@ import { MultipleChoiceQuestionComponent } from './multiple-choice-question/mult
     TopicPillsComponent,
     WidgetListComponent,
     CourseTableComponent,
-    QuizzesComponentComponent,
     QuizzesComponent,
     QuizComponent,
     TrueFalseQuestionComponent,
