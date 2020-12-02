@@ -6,7 +6,8 @@
   }"
       class="list-group-item" *ngFor="let choice of this.question.choices">
     <label class="form-check-label" for="{{choice}}">
-      <input class="form-check-input" type="radio" [(ngModel)]="this.answer" name="{{this.question._id}}" id="{{choice}}" value="{{choice}}">
+      <input class="form-check-input"
+             type="radio" [(ngModel)]="this.answer" name="{{this.question._id}}" id="{{choice}}" value="{{choice}}">
       {{choice}}
     </label>
   </li>
