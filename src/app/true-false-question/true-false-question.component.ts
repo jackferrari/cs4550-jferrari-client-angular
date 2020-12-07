@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {faCheck, faTimes} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -12,11 +12,18 @@ export class TrueFalseQuestionComponent implements OnInit {
 
   @Input()
   question = {_id: '', title: '', question: '', answer: '', correct: ''};
+
+  @Input()
   answer = '';
   grading = false;
   faCheck = faCheck;
   faTimes = faTimes;
   checked = '';
+
+  @Output()
+  answerChange = new EventEmitter<string>()
+  submitAnswer = () =>
+    this.answerChange.emit(this.answer)
 
   grade = () => {
     console.log(this.question);
