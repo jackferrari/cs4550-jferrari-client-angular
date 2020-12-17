@@ -2,14 +2,17 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class CourseService {
+
+  url = 'http://localhost:3010/api';
+
   fetchAllCourses = () =>
-    fetch('https://wbdv-generic-server.herokuapp.com/api/jferrari/courses')
+    fetch('${this.url}/jferrari/courses')
       .then(response => response.json())
   getCourseById = (courseId) =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/courses/${courseId}`)
+    fetch(`${this.url}/jferrari/courses/${courseId}`)
       .then(response => response.json())
   createCourse = () =>
-    fetch('https://wbdv-generic-server.herokuapp.com/api/jferrari/courses', {
+    fetch(`${this.url}/jferrari/courses`, {
       method: 'POST',
       body: JSON.stringify({title: 'New Course'}),
       headers: {
@@ -18,7 +21,7 @@ export class CourseService {
     })
       .then(response => response.json())
   updateCourse = (course) =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/courses/${course._id}`, {
+    fetch(`${this.url}/jferrari/courses/${course._id}`, {
       method: 'PUT',
       body: JSON.stringify(course),
       headers: {
@@ -27,7 +30,7 @@ export class CourseService {
     })
       .then(response => response.json())
   deleteCourse = (course) =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/jferrari/courses/${course._id}`, {
+    fetch(`${this.url}/jferrari/courses/${course._id}`, {
       method: 'DELETE'
     })
       .then(response => response.json())
